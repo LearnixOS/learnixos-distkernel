@@ -1,0 +1,11 @@
+--- kernel/futex/syscalls.c	2025-03-06 19:37:39.089853478 -0700
++++ kernel/futex/syscalls.c	2025-03-06 19:56:47.889997712 -0700
+@@ -200,7 +200,7 @@ inline struct futex_vector *futex_read_w
+ int futex_wait_multiple(struct futex_vector *vs, unsigned int count,
+ 			struct hrtimer_sleeper *to);
+ 
+-int futex_opcode_31(ktime_t *abs_time, u32 __user *uaddr, int count)
++static int futex_opcode_31(ktime_t *abs_time, u32 __user *uaddr, int count)
+ {
+ 	int ret;
+ 	struct futex_vector *vs;

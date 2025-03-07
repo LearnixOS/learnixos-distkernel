@@ -1,0 +1,19 @@
+--- mm/page_alloc.c	2025-03-06 19:37:32.457658770 -0700
++++ mm/page_alloc.c	2025-03-06 19:50:03.826997831 -0700
+@@ -2304,8 +2304,6 @@ static int rmqueue_bulk(struct zone *zon
+ 			int migratetype, unsigned int alloc_flags)
+ {
+ 	unsigned long flags;
+-	const bool can_resched = !preempt_count() && !irqs_disabled();
+-	int i, allocated = 0, last_mod = 0;
+ 
+ 	spin_lock_irqsave(&zone->lock, flags);
+ 	for (i = 0; i < count; ++i) {
+@@ -2304,6 +2304,7 @@ static int rmqueue_bulk(struct zone *zon
+ 			int migratetype, unsigned int alloc_flags)
+ {
+ 	unsigned long flags;
++	int i;
+ 
+ 	spin_lock_irqsave(&zone->lock, flags);
+ 	for (i = 0; i < count; ++i) {
