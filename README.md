@@ -9,6 +9,7 @@ The patches were taken from the following sources:
 - [Linux-tkg](https://github.com/Frogging-Family/linux-tkg)
 - [Linux-zen](https://github.com/zen-kernel/zen-kernel)
 - [Linux-xanmod](https://gitlab.com/xanmod/linux-patches)
+
 Truly, without these projects, creating this kernel to be as performant as possible would be a pain in the ass.
 
 ## Using the kernel
